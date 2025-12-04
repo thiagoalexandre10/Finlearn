@@ -236,6 +236,8 @@ body {
 
 /* ====================== META SEMANAL ====================== */
 
+/* ---------- META SEMANAL ---------- */
+
 #meta-semanal {
     background:#fff;
     border-radius:14px;
@@ -246,22 +248,26 @@ body {
     justify-content:center;
     flex-direction:column;
     gap:6px;
+    align-items:flex-start;      
 }
 
 #meta-titulo {
     font-size:13px;
-    text-align:right;
+    text-align:left;             
 }
+
 #meta-valor {
     font-size:22px;
     font-weight:600;
-    text-align:right;
+    text-align:left;             
 }
+
 #meta-conquistas {
     font-size:11px;
-    text-align:right;
+    text-align:left;             
     color:#555;
 }
+
 
 /* ====================== DESAFIOS ====================== */
 

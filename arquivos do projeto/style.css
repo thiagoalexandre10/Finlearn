@@ -91,7 +91,7 @@ body {
     height: 46px;
     border-radius: 50%;
     border: 3px solid #1f7a9a;
-    background-image: url(foto\ de\ perfil.png);
+    background-image: url(assets/foto\ de\ perfil.png);
     background-size: cover;
     background-position: center;
 }

@@ -1,0 +1,340 @@
+/* ====================== RESET GERAL ====================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #111;
+}
+
+/* ====================== TOPO ====================== */
+
+#topo {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#logo-area {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+#menu-botao {
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 4px 10px;
+    transition: .18s;
+}
+#menu-botao:hover {
+    transform: scale(1.05);
+    background-color: #e7e7e7;
+}
+
+#logo-texto {
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#perfil-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 6px;   
+}
+
+
+#perfil-textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.25;
+    margin-top: 10px;  
+}
+
+
+#perfil-ola {
+    font-size: 20px;      
+    font-weight: 600;
+    margin-bottom: 3px;   
+    color: #000000;
+}
+
+#perfil-nivel {
+    font-size: 13px;      
+    color: #444444;
+
+}
+
+#perfil-foto {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 3px solid #1f7a9a;
+    background-image: url(foto\ de\ perfil.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* ====================== ÁREA PRINCIPAL ====================== */
+
+#area-verde {
+    background-color: #bfeac5;
+    padding: 16px 20px 22px;
+}
+
+/* ====================== SALDO ====================== */
+
+#card-saldo {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px 24px;
+    box-shadow: 0 0 0 1px #dfdfdf;
+}
+#saldo-titulo {
+    color: #1d7d3e;
+    font-size: 15px;
+}
+#saldo-valor {
+    font-size: 36px;
+    font-weight: 700;
+}
+#saldo-atualizado {
+    font-size: 11px;
+    color: #666;
+}
+
+/* ====================== AÇÕES ====================== */
+
+#titulo-acoes {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+#acoes-botoes button {
+    background: #fff;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    padding: 9px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;          
+    justify-content: center;      
+    gap: 5px;
+    text-align: center;
+    transition: .25s;
+    height: 80px;
+}
+
+#acoes-botoes button:hover {
+    background: #f6fff6;
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 14px rgba(0,0,0,0.12);
+}
+
+#acoes-botoes span:first-child {
+    font-size: 21px;
+}
+
+/* Ícone gráfico */
+#icone-grafico {
+    width: 18px;
+    height: 16px;
+    position: relative;
+}
+#icone-grafico::before,
+#icone-grafico::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    border-radius: 2px;
+    background:#1d7d3e;
+}
+#icone-grafico::before {
+    left: 3px;
+    height: 8px;
+}
+#icone-grafico::after {
+    right: 3px;
+    height: 14px;
+}
+
+/* Ícone alvo */
+#icone-alvo {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #f15b5b;
+    position: relative;
+}
+#icone-alvo::after {
+    content:"";
+    position: absolute;
+    top:4px;
+    left:4px;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#f15b5b;
+}
+
+/* ====================== TRANSACOES ====================== */
+
+#transacoes {
+    background:#fff;
+    border-radius:10px;
+    box-shadow:0 0 0 1px #e0e0e0;
+    padding:18px 26px 12px;
+}
+
+#titulo-transacoes {
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+#transacoes ul {
+    font-size:14px;
+}
+
+#transacoes li {
+    display:flex;
+    gap:3px;
+    padding:11px 0;
+    border-top:1px solid #ddd;
+}
+
+#transacoes li:nth-child(1) span:last-child {
+    color:#14883d;
+}
+#transacoes li:nth-child(2) span:last-child,
+#transacoes li:nth-child(3) span:last-child {
+    color:#d13333;
+}
+
+/* ====================== META SEMANAL ====================== */
+
+#meta-semanal {
+    background:#fff;
+    border-radius:14px;
+    padding:18px 22px;
+    min-height:130px;
+    box-shadow:0 0 0 1px #dfdfdf;
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    gap:6px;
+}
+
+#meta-titulo {
+    font-size:13px;
+    text-align:right;
+}
+#meta-valor {
+    font-size:22px;
+    font-weight:600;
+    text-align:right;
+}
+#meta-conquistas {
+    font-size:11px;
+    text-align:right;
+    color:#555;
+}
+
+/* ====================== DESAFIOS ====================== */
+
+#desafios {
+    background:#fff;
+    border-radius:14px;
+    min-height:215px;
+    padding:22px 22px;
+    box-shadow:0 0 0 1px #dfdfdf;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+#desafios-titulo {
+    text-align:center;
+    font-size:15px;
+    margin-bottom:8px;
+}
+
+[id*="linha-desafio"] {
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+}
+
+[id*="barra"] {
+    width:100%;
+    height:10px;
+    border-radius:8px;
+    background:#e5f0e5;
+    position:relative;
+}
+
+[id*="barra"] div {
+    height:100%;
+    border-radius:8px;
+    background:#228b22;
+}
+
+#barra1 div { width:54%; }
+#barra2 div { width:70%; }
+#barra3 div { width:60%; }
+
+/* ====================== RODAPE ====================== */
+
+#rodape {
+    background:#fff;             
+    padding:12px 0 6px;           
+    text-align:center;
+    font-size:18px;
+    border-top:1px solid #ddd;
+    color:#555;
+}
+
+/* ====================== RESPONSIVO ====================== */
+
+@media (max-width:768px){
+
+    #conteudo{
+        padding:0 10px;
+    }
+
+    #coluna-direita {
+        margin-top:16px;
+        gap:18px;
+    }
+
+    #meta-semanal{
+        margin-bottom:14px;
+    }
+
+    #acoes-botoes button{
+        height:85px;
+    }
+}

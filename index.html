@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinLearn</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="topo">
+        <div id="logo-area">
+            <button id="menu-botao" class="btn p-0 border-0">☰</button>
+            <span id="logo-texto">FinLearn</span>
+        </div>
+
+        <div id="perfil-area">
+            <div id="perfil-textos">
+                <p id="perfil-ola">Olá, thiago</p>
+                <p id="perfil-nivel">Nível 2 · Explorador Financeiro</p>
+            </div>
+            <div id="perfil-foto"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="area-verde">
+            <!-- container Bootstrap + nosso id -->
+            <section id="conteudo" class="container-fluid">
+                <div class="row">
+                    <!-- COLUNA ESQUERDA -->
+                    <section id="coluna-esquerda" class="col-lg-8 col-md-12 mb-4">
+                        <!-- SALDO -->
+                        <section id="card-saldo" class="mb-4">
+                            <p id="saldo-titulo">Saldo Disponível</p>
+                            <p id="saldo-valor">R$ 2.850,90</p>
+                            <p id="saldo-atualizado">Atualizado Agora</p>
+                        </section>
+
+                        <!-- AÇÕES RÁPIDAS -->
+                        <section id="acoes-rapidas" class="mb-4">
+                            <h2 id="titulo-acoes">Ações rápidas</h2>
+                            <div id="acoes-botoes" class="row g-3">
+                                <div class="col-12 col-md-3">
+                                    <button class="btn w-100 h-100">
+                                        <span>+</span>
+                                        <span>Adicionar renda</span>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <button class="btn w-100 h-100">
+                                        <span>−</span>
+                                        <span>Registrar Gastos</span>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <button class="btn w-100 h-100">
+                                        <span id="icone-grafico"></span>
+                                        <span>Ver Relatórios</span>
+                                    </button>
+                                </div>
+                                <div class="col-12 col-md-3">
+                                    <button class="btn w-100 h-100">
+                                        <span id="icone-alvo"></span>
+                                        <span>Metas &amp; desafios</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- TRANSAÇÕES -->
+                        <section id="transacoes">
+                            <h2 id="titulo-transacoes">Transações recentes</h2>
+                            <ul>
+                                <li>
+                                    <span>Salário</span>
+                                    <span>•</span>
+                                    <span>Entrada</span>
+                                </li>
+                                <li>
+                                    <span>Mercado</span>
+                                    <span>•</span>
+                                    <span>Saída</span>
+                                </li>
+                                <li>
+                                    <span>Luz</span>
+                                    <span>•</span>
+                                    <span>Saída</span>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+
+                    <!-- COLUNA DIREITA -->
+                    <section id="coluna-direita" class="col-lg-4 col-md-12 mb-4">
+                        <!-- META SEMANAL -->
+                        <section id="meta-semanal" class="mb-4">
+                            <h2 id="meta-titulo">META SEMANAL</h2>
+                            <p id="meta-valor">R$ 1200,00</p>
+                            <p id="meta-conquistas">✨ Conquistas recentes</p>
+                        </section>
+
+                        <!-- DESAFIOS -->
+                        <section id="desafios">
+                            <h2 id="desafios-titulo">DESAFIOS</h2>
+
+                            <div id="desafio1">
+                                <div id="linha-desafio1">
+                                    <span>Apoie a um amigo</span>
+                                    <span id="percent1">54%</span>
+                                </div>
+                                <div id="barra1">
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            <div id="desafio2">
+                                <div id="linha-desafio2">
+                                    <span>Crédito consciente</span>
+                                    <span id="percent2">70%</span>
+                                </div>
+                                <div id="barra2">
+                                    <div></div>
+                                </div>
+                            </div>
+
+                            <div id="desafio3">
+                                <div id="linha-desafio3">
+                                    <span>Economizar em compras</span>
+                                    <span id="percent3">60%</span>
+                                </div>
+                                <div id="barra3">
+                                    <div></div>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer id="rodape">
+        FinLearn
+    </footer>
+</body>
+</html>

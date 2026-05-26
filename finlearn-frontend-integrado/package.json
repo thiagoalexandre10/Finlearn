@@ -1,6 +1,6 @@
 {
-  "name": "finlearn-frontend-integrado",
-  "version": "2.0.0",
+  "name": "finlearn-frontend-funcional",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {

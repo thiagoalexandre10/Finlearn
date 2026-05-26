@@ -1,24 +1,5 @@
-# Dependências
 node_modules/
-**/node_modules/
-
-# Build
 dist/
-build/
-target/
-
-# Ambientes
 .env
-**/.env
-
-# IDEs
-.idea/
-.vscode/
-*.iml
-
-# Logs
-*.log
-
-# Sistema
 .DS_Store
 Thumbs.db

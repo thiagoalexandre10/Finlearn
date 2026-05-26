@@ -1,6 +1,6 @@
-# FinLearn Frontend Integrado
+# FinLearn Frontend Funcional
 
-Frontend React SPA integrado ao backend Spring Boot do projeto FinLearn.
+Projeto React/Vite componentizado, com rotas SPA, hooks, páginas por entidade do backend e consumo de API REST do Spring Boot.
 
 ## Como rodar
 
@@ -9,41 +9,31 @@ npm.cmd install
 npm.cmd run dev
 ```
 
-Se o Vite abrir em `http://localhost:5174`, libere essa porta no CORS do backend.
+Crie um arquivo `.env` na raiz com:
+
+```env
+VITE_API_URL=http://localhost:8080
+```
 
 ## Backend esperado
 
-O backend deve estar rodando em:
+O frontend busca estes endpoints no backend Java/Spring Boot:
 
-```text
-http://localhost:8080
-```
+- `GET/POST /contas`
+- `GET/POST /transacoes`
+- `GET/POST /investimentos`
+- `GET/POST/PUT/DELETE /metas`
+- `GET/POST /pix`
+- `PUT /usuarios/{id}`
 
-Endpoints usados:
+Se algum endpoint ainda não existir, a tela usa dados locais temporários para não quebrar a interface, mas os formulários já estão preparados para chamar o backend.
 
-- `/usuarios`
-- `/contas`
-- `/transacoes`
-- `/investimentos`
-- `/metas`
-- `/pix`
+## Funções implementadas
 
-## CORS no Spring Boot
-
-```java
-.allowedOrigins(
-    "http://localhost:5173",
-    "http://localhost:5174"
-)
-```
-
-## O que está integrado
-
-- Metas: GET, POST, PUT e DELETE.
-- Contas: GET, POST, PUT e DELETE.
-- Transações: GET, POST, PUT e DELETE.
-- Investimentos: GET, POST, PUT e DELETE.
-- Pix: GET e POST.
-- Usuários: GET, POST, PUT e DELETE.
-
-As telas possuem fallback visual para quando o backend estiver fora do ar, mas exibem aviso de erro quando a API falha.
+- Login, registrar e esqueci senha com navegação.
+- Dashboard fiel ao design verde do FinLearn.
+- Botão Pix abre modal com chave Pix, valor, conta de origem e Pix no crédito quando existe cartão.
+- Nova transação, transferência, nova conta, novo investimento e nova meta chamam o backend.
+- Metas com criação, edição e exclusão.
+- Configurações com troca de tema, cor principal e tamanho de fonte usando estado/localStorage.
+- Layout responsivo para notebook e telas menores.

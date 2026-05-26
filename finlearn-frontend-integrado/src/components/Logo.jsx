@@ -1,15 +1,12 @@
-export default function Logo() {
+export default function Logo({ compact = false }) {
   return (
-    <div className="brand">
-      <span className="brand-mark">
-        <span />
-        <span />
-        <span />
-      </span>
-      <div>
-        <strong>FinLearn</strong>
-        <small>Inteligência para o seu dinheiro</small>
+    <div className="logo-wrap">
+      <div className="logo-mark" aria-hidden="true">
+        <span className="leaf leaf-one" />
+        <span className="leaf leaf-two" />
+        <span className="leaf leaf-three" />
       </div>
+      {!compact && <strong>FinLearn</strong>}
     </div>
   );
 }

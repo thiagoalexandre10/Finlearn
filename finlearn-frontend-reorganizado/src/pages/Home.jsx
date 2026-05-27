@@ -97,7 +97,41 @@ export default function Home() {
         <div className="bottom-grid">
           <Card><div className="card-title-row"><h3>Visão financeira</h3><select><option>Este mês</option></select></div><div className="bar-chart"><div style={{ height: '80%' }}><b>{formatCurrency(resumo.entradas)}</b><i className="bar green" /></div><div style={{ height: '52%' }}><b>{formatCurrency(resumo.saidas)}</b><i className="bar red" /></div><div style={{ height: '60%' }}><b>{formatCurrency(resumo.investido)}</b><i className="bar blue" /></div></div></Card>
           <Card><h3>Desafios em andamento</h3>{desafios.slice(0, 3).map((item) => <div className="challenge-row" key={item.id}><span>{item.titulo}<small>{item.descricao}</small></span><div className="tiny-progress"><i style={{ width: `${item.progresso}%` }} /></div><b>{item.status === 'NAO_CUMPRIDO' ? `-${item.pontosPerda}` : `+${item.pontosGanho}`} pts</b></div>)}</Card>
-          <Card className="ranking-mini"><h3>Seu ranking</h3><strong>{Number(data.usuario?.pontos || 0) >= 1400 ? '9º' : '10º'} <span>lugar</span></strong><p>no ranking geral</p><div className="reward">⭐ Pontos atualizados em tempo real!</div></Card>
+          <Card className="ranking-mini">
+            <h3>Seu ranking</h3>
+
+            <strong>
+              {(() => {
+                const pontosUsuario = Number(data.usuario?.pontos || 0);
+
+                const rankingBase = [
+                  { nome: "Mariana Costa", pontos: 2350 },
+                  { nome: "Lucas Lima", pontos: 1520 },
+                  { nome: "Ana Souza", pontos: 1380 },
+                  { nome: "Rafael Oliveira", pontos: 1180 },
+                  { nome: "Beatriz Almeida", pontos: 1120 },
+                  { nome: "Gabriel Martins", pontos: 1050 },
+                  { nome: data.usuario?.nome || "Você", pontos: pontosUsuario },
+                ];
+
+                const rankingOrdenado = rankingBase.sort((a, b) => b.pontos - a.pontos);
+
+                const posicaoUsuario =
+                  rankingOrdenado.findIndex(
+                    (item) => item.nome === (data.usuario?.nome || "Você")
+                  ) + 1;
+
+                return `${posicaoUsuario}º`;
+              })()}{" "}
+              <span>lugar</span>
+            </strong>
+
+            <p>no ranking geral</p>
+
+            <div className="reward">
+              ⭐ Pontos atualizados em tempo real!
+            </div>
+          </Card>
         </div>
       </div>
 

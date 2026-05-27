@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const navItems = [
-  { label: 'Início', path: '/', icon: Home },
+  { label: 'Início', path: '/home', icon: Home },
   { label: 'Transações', path: '/transacoes', icon: FileText },
   { label: 'Contas', path: '/contas', icon: CreditCard },
   { label: 'Investimentos', path: '/investimentos', icon: TrendingUp },

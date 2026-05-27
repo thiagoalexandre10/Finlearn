@@ -1,13 +1,29 @@
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Lock, Shield, User, Eye, Wallet, TrendingUp, PieChart } from 'lucide-react';
+import { Eye, EyeOff, Lock, PieChart, Shield, TrendingUp, User, Wallet } from 'lucide-react';
 import Logo from '../components/Logo';
+import { finlearnService } from '../api/finlearnService';
 
 export default function Login() {
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const [form, setForm] = useState({ identificador: '', senha: '' });
+  const [error, setError] = useState('');
 
-  function handleSubmit(event) {
+  function update(name, value) {
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    navigate('/');
+    setError('');
+
+    try {
+      await finlearnService.login(form);
+      navigate('/home');
+    } catch (err) {
+      setError(err.message || 'Não foi possível entrar. Confira seus dados.');
+    }
   }
 
   return (
@@ -28,14 +44,30 @@ export default function Login() {
       </section>
 
       <section className="auth-content">
-        <a className="help-link" href="#">Precisa de ajuda?</a>
+        <a className="help-link" href="mailto:suporte@finlearn.com">Precisa de ajuda?</a>
         <form className="auth-card" onSubmit={handleSubmit}>
           <div className="auth-icon"><Logo compact /></div>
           <h2>Entrar</h2>
           <p>Que bom ter você de volta! Faça login para continuar.</p>
 
-          <label>CPF ou e-mail<div className="input-icon"><User size={18} /><input required placeholder="Digite seu CPF ou e-mail" /></div></label>
-          <label>Senha<div className="input-icon"><Lock size={18} /><input required type="password" placeholder="Digite sua senha" /><Eye size={18} /></div></label>
+          {error && <div className="error-banner">{error}</div>}
+
+          <label>
+            CPF ou e-mail
+            <div className="input-icon">
+              <User size={18} />
+              <input required value={form.identificador} onChange={(e) => update('identificador', e.target.value)} placeholder="Digite seu CPF ou e-mail" />
+            </div>
+          </label>
+
+          <label>
+            Senha
+            <div className="input-icon">
+              <Lock size={18} />
+              <input required type={showPassword ? 'text' : 'password'} value={form.senha} onChange={(e) => update('senha', e.target.value)} placeholder="Digite sua senha" />
+              <button className="unstyled-button" type="button" onClick={() => setShowPassword((value) => !value)}>{showPassword ? <EyeOff size={18} /> : <Eye size={18} />}</button>
+            </div>
+          </label>
 
           <div className="auth-row">
             <label className="checkbox-label"><input type="checkbox" defaultChecked /> Lembrar de mim</label>
